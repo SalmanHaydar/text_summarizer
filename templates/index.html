@@ -1,6 +1,20 @@
 {% extends "base.html" %}
-
 {% block title%}Text Summarizer - Live Demo{% endblock %}
 {% block page_content %}
-  <h1 align=centere>Hello There</h1>
+{{ super() }}
+
+<div class="page_content">
+  <p>{% if res %}<br><h1>Summarized Document:</h1><br>{{ res }}{% else %}{% endif %}</p>
+</div>
+
+<footer class="page-footer navbar-fixed-bottom font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="http://www.salmanhaydar.com" target="_blank"> salmanhaydar.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
 {% endblock %}

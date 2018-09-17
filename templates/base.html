@@ -1,17 +1,16 @@
 {% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 {% block title %}{% endblock %}
 
 {% block navbar %}
 <nav class="navbar navbar-default">
 <div class="container-fluid">
 <div class="navbar-header">
-  <a class="navbar-brand" href="#">Salman Haydar</a>
+  <a class="navbar-brand" href="http://www.salmanhaydar.com" target='_blank'>Salman Haydar</a>
 </div>
 <ul class="nav navbar-nav">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Page 1</a></li>
-  <li><a href="#">Page 2</a></li>
-  <li><a href="#">Page 3</a></li>
+  <li class="active"><a href="{{ url_for('index',_external=True) }}">Home</a></li>
+  <li><a href="https://github.com/SalmanHaydar/text_summarizer" target="_blank">Github</a></li>
 </ul>
 </div>
 </nav>
@@ -19,7 +18,10 @@
 
 {% block content %}
 <div class="container">
-  {% block page_content %}{% endblock %}
+  <h4><strong>Note: This app only works for Bengali Documents</strong></h4>
+  {% block page_content %}
+    {{ wtf.quick_form(form) }}
+  {% endblock %}
   </div>
 </div>
 {% endblock %}
