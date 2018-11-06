@@ -9,5 +9,5 @@ Jinja2==2.10
 nltk==3.2.5
 numpy==1.14.0
 pickleshare==0.7.4
-requests==2.18.4
+requests==2.20.0
 WTForms==2.2.1
