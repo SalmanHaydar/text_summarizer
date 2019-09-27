@@ -11,14 +11,16 @@ class Summary:
         try:
             with open("static/dictionary.pkl","rb") as file:
                 self.dct = pickle.load(file)
+                print("dictionary loaded")
         except:
             raise("Cannot load the dictionary")
 
     def summarize(self):
         lines_ = self.doc.split("।")
+
         words_per_line = [line.split() for line in lines_]
         frq = FreqDist(word for words in words_per_line for word in words)
-        freq_list = frq.most_common(300)
+        freq_list = frq.most_common(50)
         freq_ls = [item[0] for item in freq_list]
         curated_doc = []
         for d in words_per_line:
